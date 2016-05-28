@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Visit Barcelona</title>
+		
+		<link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="./css/style.css">
+		
+	</head>
+	<body>
+		
+		<div id="menu">
+			<div class="menuBtn" id="backToIntro">Home</div>
+			<div class="menuBtn" id="backToMap">Map</div>
+		</div>
+
+		<div id="intro">
+			<div id="introContent">
+				<img src="images/home.png">
+			</div>
+		</div>
+
+		<div id="map" class="zoomViewport">
+			<div id="mapContent" class="zoomContainer">
+				<img src="images/map.png">
+				<div id="pinWrapper">
+					<div class="pin inactive" id="raval" data-label="Raval" style="top: 64%; left: 27%;"></div>
+					<div class="pin" id="barceloneta" data-label="Barceloneta" style="top: 87%; left: 39%;"></div>
+					<div class="pin inactive" id="sagradafamilia" data-label="Sagrada Familia" style="top: 42%; left: 52%;"></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="content">
+
+			<div id="videoWrapper" data-perspective="">
+
+				<!-- Tourist Video 1 -->
+				<video id="tourist1" data-citypart="1" data-type="tourist">
+					<source src="videos/tourist-1.mp4" type="video/mp4">
+					<source src="videos/tourist-1.webm" type="video/webm">
+				</video>
+				
+				<!-- Local Video 1 -->
+				<video id="local1" data-citypart="1" data-type="local">
+					<source src="videos/local-1.mp4" type="video/mp4">
+					<source src="videos/local-1.webm" type="video/webm">
+				</video>
+
+				<div id="videoControls">
+					<div id="playBtn"></div>
+					<div id="timeline">
+						<div id="progress"></div>
+					</div>
+				</div>
+
+				<div class="perspectiveIndication"></div>
+
+			</div>
+
+
+			<!-- Decision-Overlays lay on top of the videos and are shown at certain points of time.
+			The point of time is defined in /js/script.js and refers to the id of the element (ie. "#choice1"). Position and size are defined in /css/style.css -->
+			
+			<div class="choiceOverlay" data-perspective="tourist" id="choice1">
+				<div class="changePerspective">Do you want to live as a neighbour?</div>
+			</div>
+
+			<div class="choiceOverlay" data-perspective="tourist" id="choice2">
+				<div class="changePerspective">Tired? Do you want a fancy meal?</div>
+			</div>
+
+			<div class="choiceOverlay" data-perspective="tourist" id="choice3">
+				<div class="changePerspective">Relax or explore?</div>
+			</div>
+
+
+
+			<div class="choiceOverlay" data-perspective="local" id="choice4">
+				<div class="changePerspective">Neighbours have a message for you. Do you want to read it?</div>
+			</div>
+
+			<div class="choiceOverlay" data-perspective="local" id="choice5">
+				<div class="changePerspective">Are you hungry?</div>
+			</div>
+			
+
+			<!-- Counter for Decision-Overlays -->
+			<div id="choiceOverlayCounter">4</div>
+
+			<!-- Tourist / Local messages at the end of the video -->
+			<div id="endOfVideoMessageWrapper">
+				<div class="endOfVideoMessage" id="tourist">Do you believe you know the real Barcelona? If you want so, try again!</div>
+				<div class="endOfVideoMessage" id="local">You discovered the real Barcelona!</div>
+			</div>
+
+		</div>
+        
+	</body>
+	
+	<script type="text/javascript" src="js/popcorn-complete-min.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.zoomooz.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+		
+</html>

@@ -1,0 +1,368 @@
+/***************************************
+* GENERIC DEFINITIONS
+***************************************/
+
+body {
+	font-family: 'Amatic SC', cursive;;
+}
+
+#menu {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 4;
+	display: none;
+}
+
+#menu .menuBtn {
+	background-image: url("../images/label-menu.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    color: #fff;
+    cursor: default;
+    float: left;
+    font-size: 24px;
+    height: 35px;
+    margin: 10px;
+    opacity: 0.4;
+    padding: 3px 6px;
+    text-align: center;
+    width: 103px;
+}
+
+#menu .menuBtn.active {
+	opacity: 1;
+	cursor: pointer;
+}
+
+#menu .menuBtn.active:hover {
+
+}
+
+#intro {
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.8);
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 2;
+	text-align: center;
+	color: #fff;
+	z-index: 3;
+}
+
+#intro #introContent {
+	width: 60%;
+	height: auto;
+	position: absolute;
+	left: 50%;
+	top: 10%;
+	z-index: 2;
+	text-align: center;
+	color: #fff;
+	margin-left: -30%;
+	cursor: pointer;
+}
+
+#intro #introContent img {
+	width: 100%;
+	height: 100%;
+}
+
+#intro #introContent:hover {
+	outline: 2px solid #fff;
+}
+
+#map {
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.8);
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 2;
+	text-align: center;
+	overflow: hidden;
+	color: #fff;
+}
+
+#map #mapContent {
+	width: 100%;
+	height: 100%;
+}
+
+#map #mapContent img {
+	width: 100%;
+	height: 100%;
+}
+
+#map #mapContent #pinWrapper {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+#map #mapContent .pin {
+	position: absolute;
+	width: 30px;
+	height: 50px;
+	margin-top: -15px;
+	margin-right: -25px;
+	background-size: 100% auto;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#map #mapContent .pin#raval {
+	background-image: url("../images/icon-raval-black.png");
+}
+
+#map #mapContent .pin#raval:hover {
+	background-image: url("../images/icon-raval-red.png");
+}
+
+#map #mapContent .pin#barceloneta {
+	background-image: url("../images/icon-barceloneta-black.png");
+}
+
+#map #mapContent .pin#barceloneta:hover {
+	background-image: url("../images/icon-barceloneta-red.png");
+}
+
+#map #mapContent .pin#sagradafamilia {
+	background-image: url("../images/icon-sagrada-familia-black.png");
+}
+
+#map #mapContent .pin#sagradafamilia:hover {
+	background-image: url("../images/icon-sagrada-familia-red.png");
+}
+
+#map #mapContent .pin:after {
+	background: #5b0000 none repeat scroll 0 0;
+    border-radius: 6px;
+    color: #fff;
+    content: attr(data-label);
+    display: none;
+    font-size: 22px;
+    height: 23px;
+    left: -59px;
+    line-height: 20px;
+    padding: 3px 6px;
+    position: absolute;
+    top: -37px;
+    width: 134px;
+}
+
+#map #mapContent .pin:before {
+	border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #5b0000;
+    content: "";
+    left: 7px;
+    position: absolute;
+    top: -10px;
+    display: none;
+}
+
+#map #mapContent .pin.inactive {
+	opacity: .6;
+	pointer-events: none;
+}
+
+#map #mapContent .pin:hover:after, #map #mapContent .pin:hover:before {
+	display: block;
+}
+
+#content {
+	width: 100%;
+	height: 100%;
+	background: #efefef;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 1;
+}
+
+#content #videoWrapper {
+	width: 100%;
+	height: 100%;
+	background: #222;
+}
+
+#content #videoWrapper video {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+#content #videoWrapper video.active {
+	display: block;
+}
+
+#content #videoWrapper #videoControls {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 30px;
+	background: #00ff00;
+}
+
+#content #videoWrapper #videoControls #playBtn {
+	background-color: #58110F;
+	background-image: url("../images/play.png");
+	background-size: 90% auto;
+	background-position: center;
+	background-repeat: no-repeat;
+    height: 40px;
+    left: 10px;
+    position: absolute;
+    top: -50px;
+    width: 40px;
+    cursor: pointer;
+}
+
+#content #videoWrapper #videoControls #timeline {
+	width: 100%;
+	height: 100%;
+	background: #88413f;
+}
+
+#content #videoWrapper #videoControls #timeline #progress {
+	position: absolute;
+	width: 20px;
+	height: 100%;
+	background: #58110F;
+}
+
+#content #videoWrapper .perspectiveIndication {
+	background-color: rgba(255, 255, 255, 0.2);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 90% auto;
+    border-radius: 50%;
+    top: 10px;
+    content: "";
+    display: none;
+    height: 120px;
+    position: absolute;
+    right: 10px;
+    width: 120px;
+    z-index: 11;
+}
+
+#content #videoWrapper[data-perspective="tourist"] .perspectiveIndication {
+	display: block;
+	background-image: url("../images/icon-visiting.png");
+}
+
+#content #videoWrapper[data-perspective="local"] .perspectiveIndication {
+	display: block;
+	background-image: url("../images/icon-living.png");
+}
+
+#content #overlayWrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 570px;
+	display: none;
+}
+
+#content .choiceOverlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(50,50,50,.9);
+	display: none;
+	z-index: 10;
+}
+
+#content #choiceOverlayCounter {
+	background: rgba(88, 17, 15, 0.6) none repeat scroll 0 0;
+    border-radius: 50%;
+    color: #fff;
+    display: none;
+    font-size: 29px;
+    height: 120px;
+    line-height: 110px;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    top: 10px;
+    width: 120px;
+    z-index: 12;
+}
+
+#content .messageOverlay {
+	position: absolute;
+}
+
+/***************************************
+* DECISION OVERLAYS (tourist vs. local)
+***************************************/
+
+/* Decision Overlay 1 */
+.changePerspective {
+	margin: 50px;
+	margin-top: 160px;
+	padding: 10px 20px;
+	background: #fff;
+	color: #333;
+}
+
+.changePerspective:hover {
+	background: #cfcfcf;
+}
+
+
+#endOfVideoMessageWrapper {
+	position: absolute;
+	z-index: 8;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,.8);
+	display: none;
+}
+
+#endOfVideoMessageWrapper .endOfVideoMessage {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	height: auto;
+	margin-top: -50px;
+	margin-left: -200px;
+	text-align: center;
+	font-size: 26px;
+	color: #fff;
+	display: none;
+}
+
+
+/***************************************
+* CUSTOM MESSAGE OVERLAYS, ETC.
+***************************************/
+
+.messageOverlay#message1 {
+	top: 5%;
+	left: 10%;
+	width: 40%;
+	height: 60%;
+}
+
+.messageOverlay#message2 {
+	top: 5%;
+	left: 10%;
+	width: 40%;
+	height: 60%;
+}
