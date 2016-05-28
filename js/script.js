@@ -144,7 +144,7 @@ $(document).ready( function() {
 	* (TIMEBASED) EVENTS FOR TOURIST VIDEO 1
 	*************************************************************************/
 
-	tourist1.cue(60, function(evt) {
+	tourist1.cue(40, function(evt) {
 		showMessage(evt.originalTarget, '#choice1');
 	});
 
